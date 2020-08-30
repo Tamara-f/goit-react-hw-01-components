@@ -14,7 +14,7 @@
 }
 .status {
   font-size: 30px;
-  line-height: 1.7;
+  line-height: 2;
 }
 .online {
   composes: status;
