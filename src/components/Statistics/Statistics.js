@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './Statistics.module.css';
 
-function Statistics({ title, stats }) {
+const Statistics = ({ title, stats }) => {
   const isShowTitle = title;
   return (
     <section className={s.statistics}>
@@ -19,7 +19,7 @@ function Statistics({ title, stats }) {
       </ul>
     </section>
   );
-}
+};
 
 Statistics.propTypes = {
   title: PropTypes.string,

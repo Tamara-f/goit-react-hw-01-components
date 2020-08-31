@@ -3,7 +3,7 @@ import FriendListItem from './FriendListItem';
 
 import s from './FriendList.module.css';
 
-function FriendList(props) {
+const FriendList = props => {
   return (
     <ul className={s.friendList}>
       {props.friends.map(friend => (
@@ -17,5 +17,5 @@ function FriendList(props) {
       ))}
     </ul>
   );
-}
+};
 export default FriendList;

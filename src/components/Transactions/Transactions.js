@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './Transactions.module.css';
 
-function Transactions({ items }) {
+const Transactions = ({ items }) => {
   return (
     <>
       <table className={s.transactionHistory}>
@@ -30,7 +30,7 @@ function Transactions({ items }) {
       </table>
     </>
   );
-}
+};
 Transactions.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.exact({

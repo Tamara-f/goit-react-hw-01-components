@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './FriendList.module.css';
 
-function FriendListItem({ avatar, name, id, isOnline }) {
+const FriendListItem = ({ avatar, name, id, isOnline }) => {
   const isOnlineClasses = isOnline ? s.online : s.offline;
 
   return (
@@ -13,7 +13,7 @@ function FriendListItem({ avatar, name, id, isOnline }) {
       <p className="name">{name}</p>
     </li>
   );
-}
+};
 
 FriendListItem.propTypes = {
   name: PropTypes.string.isRequired,
