@@ -16,14 +16,11 @@ const Profile = ({ avatar, tag, name, location, stats }) => {
       <ul className={s.stats}>
         <li>
           <span className={s.label}> Followers</span>{' '}
-          <span className={s.quantity}>
-            {stats.followers}
-            {stats.followers < 10000 ? ' ' : '☆'}
-          </span>
+          <span className={s.quantity}>{stats.followers}</span>
         </li>
         <li>
           <span className={s.label}> Views</span>
-          <span className={s.quantity}> {stats.views}</span>
+          <span className={s.quantity}>{stats.views}</span>
         </li>
         <li>
           <span className={s.label}> Likes</span>{' '}
