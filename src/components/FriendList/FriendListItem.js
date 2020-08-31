@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FriendList.module.css';
+
+import s from './FriendList.module.css';
 
 function FriendListItem({ avatar, name, id, isOnline }) {
-  const isOnlineClasses = isOnline ? styles.online : styles.offline;
+  const isOnlineClasses = isOnline ? s.online : s.offline;
 
   return (
-    <li className={styles.item} key={id}>
+    <li className={s.item} key={id}>
       <span className={isOnlineClasses}>●</span>
-      <img className={styles.avatar} src={avatar} alt="avatar" width="48" />
+      <img className={s.avatar} src={avatar} alt="avatar" width="48" />
       <p className="name">{name}</p>
     </li>
   );

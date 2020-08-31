@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Transactions.module.css';
+
+import s from './Transactions.module.css';
 
 function Transactions({ items }) {
   return (
     <>
-      <table className={styles.transactionHistory}>
+      <table className={s.transactionHistory}>
         <thead>
-          <tr className={styles.thead}>
+          <tr className={s.thead}>
             <th>Type</th>
             <th>Amount</th>
             <th>Currency</th>
@@ -15,16 +16,16 @@ function Transactions({ items }) {
         </thead>
 
         <tbody>
-          {items.map((item, index) => (
-            <tr
-              className={index % 2 === 1 ? styles.grey : styles.white}
-              key={item.id}
-            >
-              <td>{item.type}</td>
-              <td>{item.amount}</td>
-              <td>{item.currency}</td>
-            </tr>
-          ))}
+          {items.map(({ id, type, amount, currency }, index) => {
+            const trClass = index % 2 === 1 ? s.grey : s.white;
+            return (
+              <tr className={trClass} key={id}>
+                <td>{type}</td>
+                <td>{amount}</td>
+                <td>{currency}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </>

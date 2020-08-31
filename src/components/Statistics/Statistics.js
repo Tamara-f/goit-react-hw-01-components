@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Statistics.module.css';
+
+import s from './Statistics.module.css';
 
 function Statistics({ title, stats }) {
+  const isShowTitle = title;
   return (
-    <section className={styles.statistics}>
-      {title && <h2 className={styles.title}>{title}</h2>}
+    <section className={s.statistics}>
+      {isShowTitle && <h2 className={s.title}>{title}</h2>}
 
-      <ul className={styles.statList}>
-        {stats.map(stat => (
-          <li className={styles.item} key={stat.id}>
-            <span className={styles.label}>{stat.label}</span>
-            <span className={styles.percentage}>{stat.percentage}%</span>
+      <ul className={s.statList}>
+        {stats.map(({ id, label, percentage }) => (
+          <li className={s.item} key={id}>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
